@@ -3,87 +3,73 @@
 //? Tum sayfa yuklendiginde getData() fonk calistirarak  API'deki datayi indir ve  ulke isimlerini select'e bas
 
 //? 1.yazim sekli
+
 window.addEventListener("load", () => {
   getData();
 });
-
 //? 2.yazim sekli
 // window.onload = function () {
 //   getData();
+
 // }
+let ülkeler; //?datayi globale cekmek icin
 
-let countries; //?datayi globale cekmek icin
-
-//? datayi apiden cekme fonk.
 const getData = async () => {
   try {
     const URL = "https://restcountries.com/v3.1/all";
     const res = await fetch(URL);
     if (!res.ok) {
-      renderError(`Something went wrong:${res.status}`);
       throw new Error();
     }
     const data = await res.json();
-    countries = data; //?//?datayi countries e aktararak  globale cektim
-    // console.log(countries);
-    nameSelect(countries);
-    
+    ülkeler = data; //?datayi countries e aktararak  globale cektim
+    console.log(ülkeler);
+    nameSelect(data);
+
     // console.log(data);
   } catch (error) {
     console.log(error);
-    
   }
 };
-//? hata olmasi durumunda DOM'a
-const renderError = (err) => {
-  const countries = document.querySelector(".cards");
-  countries.innerHTML = `
-    <h3 class="text-danger">${error}</h3>
-    <img src='./404.png' alt="" />
-  `;
-};
 
+const select = document.querySelector(".form-select"); //?event dada kullanmak icin disarda tanimladim
 //?select'te  ulke ismi degistiginde secilen ulkenin bilgilerini
 //? Card olarak DOM'a bas
 
-const nameSelect = (countries) => {
-  const select = document.querySelector(".form-select");
-  countries.forEach((element) => {//?
+const nameSelect = (data) => {
+  ülkeler.forEach((element) => {
     // console.log(element);
 
     select.innerHTML += `<option value=${element.name.common}>${element.name.common}</option>`;
   });
-  
+  // domaYaz(data)
 };
 
 select.addEventListener("change", (e) => {
-  const selected = e.currentTarget.value;
-  // console.log(selected);
+  const selected = e.currentTarget.value; //?currenttarget select 'i isaret eder
+  console.log(selected);
   if (selected) {
-    // console.log(countries);
-    const selectedCountry = countries.filter((item) => {
+    // console.log(ülkeler);
+    const secilenUlke = ülkeler.filter((item) => {
       return item.name.common === selected;
     });
-    // console.log(selectedCountry);
-    domaYaz(selectedCountry[0]);
+    console.log(secilenUlke);
+    domaYaz(secilenUlke[0]);
   }
 });
 
-
-//? Ulke bilgilerini card'a  basan fonksiyon
-
-const domaYaz = (country) => {
+const domaYaz = (y) => {
   const {
     flags: { png }, //?nested objectlerde destructuring
-    name: { common },
+    name: { common }, //?nested objectlerde destructuring
     region,
     capital,
     languages,
     currencies,
     population,
     borders,
-    maps: { googleMaps },
-  } = country;
+    maps: { googleMaps }, //?nested objectlerde destructuring
+  } = y;
 
   const cardSection = document.getElementById("cards");
   cardSection.innerHTML = `<div class="card m-auto mt-4" style="width: 28rem">
