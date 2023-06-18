@@ -39,7 +39,20 @@ const select = document.querySelector(".form-select"); //?event dada kullanmak i
 const nameSelect = (data) => {
   ülkeler.forEach((element) => {
     // console.log(element);
+    ülkeler=data; //?datayi countries e aktararak  globale cektim
+    ülkeler.sort((a, b) => {
+      const nameA = a.name.common.toUpperCase();
+      const nameB = b.name.common.toUpperCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    });
 
+    // ! Yukarda ulkeleri siralayarak çalıştırılıyoruz
     select.innerHTML += `<option value=${element.name.common}>${element.name.common}</option>`;
   });
   // domaYaz(data)
