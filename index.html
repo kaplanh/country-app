@@ -22,18 +22,18 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body style="height: 100vh">
+  <body class="bg-light" style="height: 100vh">
     <!-- https://flags-cw.netlify.app/ -->
-    <h1 class="text-center text-light display-3 text-uppercase mt-4">
+    <h1 class="text-center text-danger display-6 fw-normal text-uppercase " >
       Countries
     </h1>
-    <main class="container mt-4">
-      <div class="m-auto" style="width: 30rem">
-        <select class="form-select p-2" aria-label="Default select example">
+    <main class="container mt-0">
+      <div id="selectDiv" class="m-auto" style="width: 25rem">
+        <select style="width: 25rem" class="form-select p-1 bg-light " aria-label="Default select example">
           <option selected>Select Country</option>
         </select>
       </div>
-      <section id="cards">
+      <section class="d-flex justify-content-center" id="cards">
         <!-- <div class="card m-auto mt-4" style="width: 28rem">
             <img src="" class="card-img-top" alt="..." />
             <div class="card-body">
