@@ -39,7 +39,7 @@ const getData = async () => {
 
 const renderError = (error) => {
     const cardSection = document.getElementById("cards");
-    cardSection.innerHTML = `<img src="./404.png" alt="" />`;
+    cardSection.innerHTML = `<img src="./img/404.png" alt="" />`;
 };
 
 const select = document.querySelector(".form-select"); //?event dada kullanmak icin disarda tanimladim
