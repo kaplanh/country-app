@@ -38,7 +38,7 @@ country-app(folder)
 ### At the end of the project, the following topics are to be covered;
 
 - API's
-  - [News API](https://restcountries.com/v3.1/all),[^1]
+  - [News API](https://restcountries.com/v3.1/all)[^1]
   [^1]:sadece localde datalara ulasilabilir.
 - HTML
 - CSS
