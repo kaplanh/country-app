@@ -24,23 +24,21 @@
 ## Project Skeleton 
 
 ```
-Synchronous-Asynchronous-Programming(folder)
+country-app(folder)
 |
 |----readme.md                        
 |----index.html
 |----img (folder)
 |----style.css
-|----1-intro.js
-|----2-promise.js
-|----3-fetchAPI.js
-|----4-async-await.js
+|----app.js
+|----img (folder)
+
 ```
 
 ### At the end of the project, the following topics are to be covered;
 
 - API's
-  - [Github followers API](https://api.github.com/users)
-  - [newsAPI](https://newsapi.org/)
+  - [News API](https://restcountries.com/v3.1/all)[^°1]:sadece localde datalara ulasilabilir
 - HTML
 - CSS
  - !importat
