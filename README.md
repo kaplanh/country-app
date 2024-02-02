@@ -3,7 +3,7 @@
 **How does my project look**
 
 
-![Video_240201005720](https://github.com/kaplanh/Synchronous-Asynchronous-Programming/assets/101884444/96410212-c860-4320-a0c7-d54dd0a67b62)
+![countries](https://github.com/kaplanh/country-app/assets/101884444/c7be50a1-9c75-4483-bb90-8d5a62e409a5)
 
 [Live link!](https://kaplanh.github.io/country-app/)
 
